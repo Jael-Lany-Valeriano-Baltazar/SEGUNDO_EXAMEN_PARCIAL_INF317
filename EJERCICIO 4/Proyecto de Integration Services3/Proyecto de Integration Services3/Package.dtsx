@@ -1,0 +1,128 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/15/2023 2:41:33 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-1RDV674"
+  DTS:CreatorName="DESKTOP-1RDV674\Zia OS"
+  DTS:DTSID="{60143085-12B3-4A36-BA3B-5004ECBE07AE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{7C4AB186-151E-48BF-856B-FD4D7A7044D3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).DW_ACADEMICO.317]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{78F5EBFB-32B7-46D0-98E8-66AF21CC9ABD}"
+      DTS:ObjectName="(local).DW_ACADEMICO.317">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);User ID=317;Initial Catalog=DW_ACADEMICO;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdI902nnQHEC82qAdoudqnQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC1Q0LONR2Lfpr8V6tAK7gKaM35mnFpJcRS4p9eZoqRkwAAAAAOgAAAAAIAACAAAADfOjCc2UfE3FFEnMPXZg6tBs7ufIoQ7oO5l2QfqqP//xAAAADEZ4reV3HLNwW/iDQ2IZCVQAAAAG6HN+NCbB2dLY9a/tld941lMpumlRr82zPmSZjkAb5pCchdo/6O83TOThOt1kEJkFkmDy9lO8ISx+gcN9OtkQk</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{7A4C90F4-23B6-4FE5-8EC3-DFB756170439}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{78F5EBFB-32B7-46D0-98E8-66AF21CC9ABD}"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'DimDocente')&#xA;BEGIN&#xA;    CREATE TABLE DimDocente (&#xA;        DocenteKey INT PRIMARY KEY,&#xA;        ID INT,&#xA;        Nombre VARCHAR(50),&#xA;        Apellido VARCHAR(50),&#xA;        Especialidad VARCHAR(50)&#xA;    );&#xA;END&#xA;&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'DimEstudiante')&#xA;BEGIN&#xA;    CREATE TABLE DimEstudiante (&#xA;        EstudianteKey INT PRIMARY KEY,&#xA;        ID INT,&#xA;        Nombre VARCHAR(50),&#xA;        Apellido VARCHAR(50),&#xA;        Carrera VARCHAR(50)&#xA;    );&#xA;END&#xA;&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'DimMateria')&#xA;BEGIN&#xA;    CREATE TABLE DimMateria (&#xA;        MateriaKey INT PRIMARY KEY,&#xA;        ID INT,&#xA;        Nombre VARCHAR(50),&#xA;        Descripcion VARCHAR(100),&#xA;        Creditos INT&#xA;    );&#xA;END&#xA;&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'DimHorario')&#xA;BEGIN&#xA;    CREATE TABLE DimHorario (&#xA;        HorarioKey INT PRIMARY KEY,&#xA;        ID INT,&#xA;        DiaSemana VARCHAR(20),&#xA;        HoraInicio TIME,&#xA;        HoraFin TIME,&#xA;        Aula VARCHAR(20)&#xA;    );&#xA;END&#xA;&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Imparte')&#xA;BEGIN&#xA;    CREATE TABLE Imparte (&#xA;        ImparteKey INT PRIMARY KEY,&#xA;        DocenteKey INT,&#xA;        MateriaKey INT,&#xA;        HorarioKey INT,&#xA;        FOREIGN KEY (DocenteKey) REFERENCES DimDocente (DocenteKey),&#xA;        FOREIGN KEY (MateriaKey) REFERENCES DimMateria (MateriaKey),&#xA;        FOREIGN KEY (HorarioKey) REFERENCES DimHorario (HorarioKey)&#xA;    );&#xA;END&#xA;&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Nota')&#xA;BEGIN&#xA;    CREATE TABLE Nota (&#xA;        NotaKey INT PRIMARY KEY,&#xA;        EstudianteKey INT,&#xA;        MateriaKey INT,&#xA;        Nota FLOAT,&#xA;        FOREIGN KEY (EstudianteKey) REFERENCES DimEstudiante (EstudianteKey),&#xA;        FOREIGN KEY (MateriaKey) REFERENCES DimMateria (MateriaKey)&#xA;    );&#xA;END&#xA;&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Inscripcion')&#xA;BEGIN&#xA;    CREATE TABLE Inscripcion (&#xA;        InscripcionKey INT PRIMARY KEY,&#xA;        EstudianteKey INT,&#xA;        MateriaKey INT,&#xA;        HorarioKey INT,&#xA;        FOREIGN KEY (EstudianteKey) REFERENCES DimEstudiante (EstudianteKey),&#xA;        FOREIGN KEY (MateriaKey) REFERENCES DimMateria (MateriaKey),&#xA;        FOREIGN KEY (HorarioKey) REFERENCES DimHorario (HorarioKey)&#xA;    );&#xA;END&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{84408CC1-1A03-4E9D-A0EC-155644997440}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{78F5EBFB-32B7-46D0-98E8-66AF21CC9ABD}"
+          SQLTask:SqlStatementSource="-- Inserción de datos en DimDocente" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{BE908B47-1126-4964-B5DB-57C71AD804DF}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Tarea Ejecutar SQL 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="sql12">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="154,43" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Tarea Ejecutar SQL 1"
+          TopLeft="150,145" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="239.25,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
