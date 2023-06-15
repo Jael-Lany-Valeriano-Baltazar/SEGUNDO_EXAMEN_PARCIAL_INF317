@@ -1,0 +1,249 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c8595059-7082-48a9-bb68-5c895f619de4" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DW ACADEMICO</ID>
+  <Name>DW ACADEMICO</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>DW ACADEMICO</DataSourceID>
+  <Schema>
+    <xs:schema id="DW_x0020_ACADEMICO" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="DW_x0020_ACADEMICO" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="cd46d009-d0d5-4671-8209-a74c1b69c959">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DimDocente" msprop:design-time-name="4ff755b4-ee48-4125-99a7-b8afea5e1665" msprop:DbTableName="DimDocente" msprop:FriendlyName="DimDocente" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DocenteKey" msprop:design-time-name="07014714-08fc-4093-ade2-d9aff5ec036d" msprop:DbColumnName="DocenteKey" msprop:FriendlyName="DocenteKey" type="xs:int" />
+                  <xs:element name="ID" msprop:design-time-name="dde3fbd6-4beb-40ea-9c7a-9ce7384e3989" msprop:DbColumnName="ID" msprop:FriendlyName="ID" type="xs:int" minOccurs="0" />
+                  <xs:element name="Nombre" msprop:design-time-name="fabe7356-e1b1-487c-b6c0-607c6922abbe" msprop:DbColumnName="Nombre" msprop:FriendlyName="Nombre" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Apellido" msprop:design-time-name="e9c0536d-d9a7-4f36-ba88-fdfe159532ec" msprop:DbColumnName="Apellido" msprop:FriendlyName="Apellido" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Especialidad" msprop:design-time-name="2ab44047-443e-4614-8648-e602fb6ca52e" msprop:DbColumnName="Especialidad" msprop:FriendlyName="Especialidad" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimEstudiante" msprop:design-time-name="7744eb70-3586-4626-8911-b64d76342865" msprop:DbTableName="DimEstudiante" msprop:FriendlyName="DimEstudiante" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="EstudianteKey" msprop:design-time-name="19323efb-113e-432e-ad0d-9a9a6c79d34a" msprop:DbColumnName="EstudianteKey" msprop:FriendlyName="EstudianteKey" type="xs:int" />
+                  <xs:element name="ID" msprop:design-time-name="a96c4a2b-8829-4761-95dd-f813470126bd" msprop:DbColumnName="ID" msprop:FriendlyName="ID" type="xs:int" minOccurs="0" />
+                  <xs:element name="Nombre" msprop:design-time-name="9a1e8377-d44d-497b-bc31-bb21d35af1ac" msprop:DbColumnName="Nombre" msprop:FriendlyName="Nombre" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Apellido" msprop:design-time-name="2d5790b2-ed14-4b10-b795-a8c44873cb21" msprop:DbColumnName="Apellido" msprop:FriendlyName="Apellido" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Carrera" msprop:design-time-name="b85277d8-d826-4057-b2df-988bbaf8afd8" msprop:DbColumnName="Carrera" msprop:FriendlyName="Carrera" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimHorario" msprop:design-time-name="9e35c065-dcb4-493e-a729-24913ee4b8b4" msprop:DbTableName="DimHorario" msprop:FriendlyName="DimHorario" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HorarioKey" msprop:design-time-name="f4ba678a-5fa7-4864-8fa8-7d7cbab71468" msprop:DbColumnName="HorarioKey" msprop:FriendlyName="HorarioKey" type="xs:int" />
+                  <xs:element name="ID" msprop:design-time-name="0b29757f-a243-42f5-b05b-933bcf583e8b" msprop:DbColumnName="ID" msprop:FriendlyName="ID" type="xs:int" minOccurs="0" />
+                  <xs:element name="DiaSemana" msprop:design-time-name="17bab826-6a31-4d15-b217-ae74172bec16" msprop:DbColumnName="DiaSemana" msprop:FriendlyName="DiaSemana" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="HoraInicio" msdata:DataType="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:design-time-name="88a42d88-efde-470a-8ea3-3414ec616a60" msprop:DbColumnName="HoraInicio" msprop:FriendlyName="HoraInicio" type="xs:anyType" minOccurs="0" />
+                  <xs:element name="HoraFin" msdata:DataType="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:design-time-name="a7a4a110-3854-4ac9-88f8-cfd153bbf9cd" msprop:DbColumnName="HoraFin" msprop:FriendlyName="HoraFin" type="xs:anyType" minOccurs="0" />
+                  <xs:element name="Aula" msprop:design-time-name="6e0b5df9-89fc-4ee0-8355-d84752540e3e" msprop:DbColumnName="Aula" msprop:FriendlyName="Aula" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimMateria" msprop:design-time-name="864d93a6-d9d3-4d98-ab4a-77565e0a12ce" msprop:DbTableName="DimMateria" msprop:FriendlyName="DimMateria" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="MateriaKey" msprop:design-time-name="41aa2c3a-d7ee-4855-90b2-fef1cd682742" msprop:DbColumnName="MateriaKey" msprop:FriendlyName="MateriaKey" type="xs:int" />
+                  <xs:element name="ID" msprop:design-time-name="b258fc2b-02bd-4791-a480-7506ccf74dc9" msprop:DbColumnName="ID" msprop:FriendlyName="ID" type="xs:int" minOccurs="0" />
+                  <xs:element name="Nombre" msprop:design-time-name="b20467c4-0628-477d-ba06-aad5a686c3fc" msprop:DbColumnName="Nombre" msprop:FriendlyName="Nombre" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Descripcion" msprop:design-time-name="6c1d8df6-db76-4c18-bf25-a6a740065dbb" msprop:DbColumnName="Descripcion" msprop:FriendlyName="Descripcion" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Creditos" msprop:design-time-name="23d82510-8858-472e-990b-842579942289" msprop:DbColumnName="Creditos" msprop:FriendlyName="Creditos" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Imparte" msprop:design-time-name="1abbd25f-7ef1-496a-98b3-4754fbe16b5f" msprop:DbTableName="Imparte" msprop:FriendlyName="Imparte" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ImparteKey" msprop:design-time-name="d50ae763-571a-46a8-a54b-d341608c7ff9" msprop:DbColumnName="ImparteKey" msprop:FriendlyName="ImparteKey" type="xs:int" />
+                  <xs:element name="DocenteKey" msprop:design-time-name="ee26831f-1284-49b5-96fd-23129ba3aa03" msprop:DbColumnName="DocenteKey" msprop:FriendlyName="DocenteKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="MateriaKey" msprop:design-time-name="9735061e-de00-44b0-b253-329ec2c141a4" msprop:DbColumnName="MateriaKey" msprop:FriendlyName="MateriaKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="HorarioKey" msprop:design-time-name="8f690caf-5ec1-4394-899b-38a7a240a5b8" msprop:DbColumnName="HorarioKey" msprop:FriendlyName="HorarioKey" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Inscripcion" msprop:design-time-name="365dd087-5ab6-4418-91cc-06a714bbad34" msprop:DbTableName="Inscripcion" msprop:FriendlyName="Inscripcion" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="InscripcionKey" msprop:design-time-name="7a1f70bf-e86e-4d64-8a53-3ebb74ef125c" msprop:DbColumnName="InscripcionKey" msprop:FriendlyName="InscripcionKey" type="xs:int" />
+                  <xs:element name="EstudianteKey" msprop:design-time-name="4f87b580-51a3-44df-a3d9-272ea915b461" msprop:DbColumnName="EstudianteKey" msprop:FriendlyName="EstudianteKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="MateriaKey" msprop:design-time-name="8e25ab5a-893a-4b26-9f73-7987f918636c" msprop:DbColumnName="MateriaKey" msprop:FriendlyName="MateriaKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="HorarioKey" msprop:design-time-name="82e7c495-bc7b-413a-9307-7a4d05914eaf" msprop:DbColumnName="HorarioKey" msprop:FriendlyName="HorarioKey" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Nota" msprop:design-time-name="8c97ec1a-5383-4b9b-991e-2d064d550d9a" msprop:DbTableName="Nota" msprop:FriendlyName="Nota" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="NotaKey" msprop:design-time-name="b881f916-e8a1-44c1-8dd5-752417108ac6" msprop:DbColumnName="NotaKey" msprop:FriendlyName="NotaKey" type="xs:int" />
+                  <xs:element name="EstudianteKey" msprop:design-time-name="ec00c072-7e1b-4644-9302-dce4ae5bd18e" msprop:DbColumnName="EstudianteKey" msprop:FriendlyName="EstudianteKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="MateriaKey" msprop:design-time-name="635fb9f7-b756-4273-94f6-3fa82047febf" msprop:DbColumnName="MateriaKey" msprop:FriendlyName="MateriaKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="Nota" msprop:design-time-name="74a9be58-3121-40ef-8c1c-19d08ffaa48f" msprop:DbColumnName="Nota" msprop:FriendlyName="Nota" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimDocente" />
+          <xs:field xpath="DocenteKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimEstudiante_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimEstudiante" />
+          <xs:field xpath="EstudianteKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimHorario_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimHorario" />
+          <xs:field xpath="HorarioKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimMateria_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimMateria" />
+          <xs:field xpath="MateriaKey" />
+        </xs:unique>
+        <xs:unique name="dbo_Imparte_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Imparte" />
+          <xs:field xpath="ImparteKey" />
+        </xs:unique>
+        <xs:unique name="dbo_Inscripcion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Inscripcion" />
+          <xs:field xpath="InscripcionKey" />
+        </xs:unique>
+        <xs:unique name="dbo_Nota_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Nota" />
+          <xs:field xpath="NotaKey" />
+        </xs:unique>
+        <xs:keyref name="FK__Nota__Estudiante__440B1D61" refer="dbo_DimEstudiante_Constraint1">
+          <xs:selector xpath=".//dbo_Nota" />
+          <xs:field xpath="EstudianteKey" />
+        </xs:keyref>
+        <xs:keyref name="FK__Nota__MateriaKey__44FF419A" refer="dbo_DimMateria_Constraint1">
+          <xs:selector xpath=".//dbo_Nota" />
+          <xs:field xpath="MateriaKey" />
+        </xs:keyref>
+        <xs:keyref name="FK__Inscripci__Horar__49C3F6B7" refer="dbo_DimHorario_Constraint1">
+          <xs:selector xpath=".//dbo_Inscripcion" />
+          <xs:field xpath="HorarioKey" />
+        </xs:keyref>
+        <xs:keyref name="FK__Inscripci__Mater__48CFD27E" refer="dbo_DimMateria_Constraint1">
+          <xs:selector xpath=".//dbo_Inscripcion" />
+          <xs:field xpath="MateriaKey" />
+        </xs:keyref>
+        <xs:keyref name="FK__Inscripci__Estud__47DBAE45" refer="dbo_DimEstudiante_Constraint1">
+          <xs:selector xpath=".//dbo_Inscripcion" />
+          <xs:field xpath="EstudianteKey" />
+        </xs:keyref>
+        <xs:keyref name="FK__Imparte__Materia__403A8C7D" refer="dbo_DimMateria_Constraint1">
+          <xs:selector xpath=".//dbo_Imparte" />
+          <xs:field xpath="MateriaKey" />
+        </xs:keyref>
+        <xs:keyref name="FK__Imparte__Horario__412EB0B6" refer="dbo_DimHorario_Constraint1">
+          <xs:selector xpath=".//dbo_Imparte" />
+          <xs:field xpath="HorarioKey" />
+        </xs:keyref>
+        <xs:keyref name="FK__Imparte__Docente__3F466844" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Imparte" />
+          <xs:field xpath="DocenteKey" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <DW_x0020_ACADEMICO xmlns="" />
+  </Schema>
+</DataSourceView>

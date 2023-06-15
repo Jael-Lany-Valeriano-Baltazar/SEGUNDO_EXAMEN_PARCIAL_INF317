@@ -1,0 +1,145 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="7ee660da-78c3-476b-b2fd-55bf40881722" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DW ACADEMICO</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Dim Docente</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="701e8449-3c95-4416-9e76-c2112d23e0f7">
+          <ID>Dim Docente</ID>
+          <Name>Dim Docente</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f354dbba-a2ec-4b66-8934-f345584dd364">
+            <DataSourceViewID>DW ACADEMICO</DataSourceViewID>
+            <TableID>dbo_DimDocente</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Dim Estudiante</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="abd5ff15-22a3-4c85-ac6a-fe2c3ae08aed">
+          <ID>Dim Estudiante</ID>
+          <Name>Dim Estudiante</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c76b2df0-3a42-43cb-b686-24792721e9e9">
+            <DataSourceViewID>DW ACADEMICO</DataSourceViewID>
+            <TableID>dbo_DimEstudiante</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Dim Horario</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="c1130768-3d96-4ebc-9250-70db3eb1581d">
+          <ID>Dim Horario</ID>
+          <Name>Dim Horario</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="598e100d-d28b-4675-a21b-a74d0ad4acfe">
+            <DataSourceViewID>DW ACADEMICO</DataSourceViewID>
+            <TableID>dbo_DimHorario</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Dim Materia</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="f6f379fe-5378-4692-83dc-8bb1c8b61043">
+          <ID>Dim Materia</ID>
+          <Name>Dim Materia</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="361363b8-39bb-4c66-bafa-859a393a8ede">
+            <DataSourceViewID>DW ACADEMICO</DataSourceViewID>
+            <TableID>dbo_DimMateria</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Imparte</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d358fed2-7903-4771-8aa5-d56c86d9613c">
+          <ID>Imparte</ID>
+          <Name>Imparte</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d84085d9-d457-44b9-8028-817d61cb3372">
+            <DataSourceViewID>DW ACADEMICO</DataSourceViewID>
+            <TableID>dbo_Imparte</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Inscripcion</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="354934cd-cc5a-43b7-a322-9cc548b48e08">
+          <ID>Inscripcion</ID>
+          <Name>Inscripcion</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f3dbe89a-a434-4535-b80f-b017d55bbe32">
+            <DataSourceViewID>DW ACADEMICO</DataSourceViewID>
+            <TableID>dbo_Inscripcion</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Nota</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="ff8ad2df-da26-48a2-9dd0-7e7e1f8015f3">
+          <ID>Nota</ID>
+          <Name>Nota</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="2858288c-a8a9-4c7b-afb3-ec2cd8580a89">
+            <DataSourceViewID>DW ACADEMICO</DataSourceViewID>
+            <TableID>dbo_Nota</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

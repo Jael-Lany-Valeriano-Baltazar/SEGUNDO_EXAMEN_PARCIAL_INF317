@@ -1,0 +1,571 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="61c64c70-7159-42b1-b59f-718c2ffff376" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DW ACADEMICO</ID>
+  <Name>DW ACADEMICO</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="aa19f19a-9f6d-41cf-a9d4-08b9820e0404">
+      <ID>Dim Docente</ID>
+      <Name>Dim Docente</Name>
+      <DimensionID>Dim Docente</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="7b4c10ee-1179-4266-9081-c3ea0f30f4f3">
+          <AttributeID>Docente Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c2d820a0-fea0-45b9-a3d4-207b2d7e2173">
+      <ID>Dim Estudiante</ID>
+      <Name>Dim Estudiante</Name>
+      <DimensionID>Dim Estudiante</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="e10ef2be-8cc3-43ae-9eb1-39196247cee6">
+          <AttributeID>Estudiante Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="eefca39d-55da-44a0-86a8-61624d2eab8e">
+      <ID>Dim Horario</ID>
+      <Name>Dim Horario</Name>
+      <DimensionID>Dim Horario</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ae0b071d-89e4-48f1-93d2-a5fab8dd9454">
+          <AttributeID>Horario Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="30ff5a19-6a99-49c1-ad25-7361fd104c8f">
+      <ID>Dim Materia</ID>
+      <Name>Dim Materia</Name>
+      <DimensionID>Dim Materia</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8ac2ae86-3c55-4271-af69-537b8c39c19e">
+          <AttributeID>Materia Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="42b9fee8-8790-4773-b420-85c1d08d2ed6">
+      <ID>Dim Docente</ID>
+      <Name>Dim Docente</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="8579bee5-c089-4b6f-b661-66f21bd3f85e">
+          <ID>ID</ID>
+          <Name>ID</Name>
+          <Source dwd:design-time-name="ea5507ff-16e5-49c8-ad4c-76dfde038669">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ff2ae914-26e9-40a2-8201-3ef828c9493d">
+              <TableID>dbo_DimDocente</TableID>
+              <ColumnID>ID</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="285b0290-d780-485c-a52f-4f4a77d393bb">
+          <ID>Recuento Dim Docente</ID>
+          <Name>Recuento Dim Docente</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="a01c6758-9072-4df1-be2a-fdb8f8375595">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="4dbde9c2-cbb6-4337-bfd8-d7b3aa20cf20">
+              <TableID>dbo_DimDocente</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="afa48783-46c6-4a89-99ac-e2ddddedeba0">
+          <CubeDimensionID>Dim Docente</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="99e3d368-f5d5-4e09-be5a-7484ea97256c">
+              <AttributeID>Docente Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6938888a-63aa-4592-be7b-46429febd886">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="307759b5-cb13-4051-9950-6d3115a43e26">
+                    <TableID>dbo_DimDocente</TableID>
+                    <ColumnID>DocenteKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="0a8764e7-f71c-4149-ada4-fde3e3663cb4">
+      <ID>Dim Estudiante</ID>
+      <Name>Dim Estudiante</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="2ee7f1cc-b5a4-49b5-877f-0789addf72d7">
+          <ID>ID - Dim Estudiante</ID>
+          <Name>ID - Dim Estudiante</Name>
+          <Source dwd:design-time-name="52022e26-c087-4d61-b473-1076f7d4b49f">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="07dcd69f-b59c-42e3-a90f-3898d73e8625">
+              <TableID>dbo_DimEstudiante</TableID>
+              <ColumnID>ID</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c2c1cf48-a7e5-4261-8a89-83dc3f38f613">
+          <ID>Recuento Dim Estudiante</ID>
+          <Name>Recuento Dim Estudiante</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="34dd2638-23e0-4f9a-b3c3-9d219c62441c">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="170df474-3de2-4614-a12b-b29f0c5a5197">
+              <TableID>dbo_DimEstudiante</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="2ad47635-e041-4d96-85ad-838a742dc1d7">
+          <CubeDimensionID>Dim Estudiante</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="1b26aa81-3de5-40a9-aff1-2783fa798406">
+              <AttributeID>Estudiante Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b5d95221-ee6e-42ac-ba3e-ce32d47a194c">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0e74fc53-79b2-4439-a980-bade16e37734">
+                    <TableID>dbo_DimEstudiante</TableID>
+                    <ColumnID>EstudianteKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="5f2c94b7-cadd-43d6-83f1-f7cbb7e7b0b2">
+      <ID>Dim Horario</ID>
+      <Name>Dim Horario</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="ded724f7-7641-48e9-8d75-fdb88615c783">
+          <ID>ID - Dim Horario</ID>
+          <Name>ID - Dim Horario</Name>
+          <Source dwd:design-time-name="81cad442-815d-4b3e-8c02-81447c35a95d">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b22ed00a-daf8-4850-90a1-4a1f37fe7472">
+              <TableID>dbo_DimHorario</TableID>
+              <ColumnID>ID</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="def56a01-a089-4d24-b631-fa4cd3fa65c2">
+          <ID>Recuento Dim Horario</ID>
+          <Name>Recuento Dim Horario</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="e96e6d4a-40ec-4821-9f71-f3f3b4d0dd9f">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="d82bd93f-4d13-4368-9e48-dfa01eed37df">
+              <TableID>dbo_DimHorario</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="c154eeb7-46a8-463c-a6f0-3a363b3fcd48">
+          <CubeDimensionID>Dim Horario</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="67c89d68-b310-44a5-b1c0-4098df971bb5">
+              <AttributeID>Horario Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="241dddf2-8ed4-40d8-bcb1-a8e0aed3cf27">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d1338ec2-4c9d-4794-b88e-114a88484a53">
+                    <TableID>dbo_DimHorario</TableID>
+                    <ColumnID>HorarioKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="9e5fb7d1-cadd-47e4-a273-d55bdde1a3d4">
+      <ID>Dim Materia</ID>
+      <Name>Dim Materia</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="4989b8cb-fbdf-4e49-ae9b-a98da2605ab4">
+          <ID>ID - Dim Materia</ID>
+          <Name>ID - Dim Materia</Name>
+          <Source dwd:design-time-name="c710685d-0ae7-4b6d-a690-7a39b260f606">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="788d8273-a3ba-4de8-8543-5a9728dc86e6">
+              <TableID>dbo_DimMateria</TableID>
+              <ColumnID>ID</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a90c91f7-f3d3-4714-8f09-3930a2d0bc53">
+          <ID>Creditos</ID>
+          <Name>Creditos</Name>
+          <Source dwd:design-time-name="793b7d9d-c199-43e3-8b81-7a4ae444a227">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4ca636e9-98c8-449c-b89d-32d345a5bfea">
+              <TableID>dbo_DimMateria</TableID>
+              <ColumnID>Creditos</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="807e3706-da2b-455a-8e24-2095d2d7192e">
+          <ID>Recuento Dim Materia</ID>
+          <Name>Recuento Dim Materia</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="73e1d45e-de53-4ede-b324-a8ac229db540">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="6ad5d96c-4898-4c00-bc8a-0abce2c0b6f6">
+              <TableID>dbo_DimMateria</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="7a78a694-a166-4176-ab56-6d37db9740e9">
+          <CubeDimensionID>Dim Materia</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="824b173a-1e0e-482b-8f6a-32bfc4e3dc09">
+              <AttributeID>Materia Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b68e9629-c939-451e-8bdf-32a2ba5448d0">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8a4c1acf-2a1b-4553-b603-81f89cc0b87c">
+                    <TableID>dbo_DimMateria</TableID>
+                    <ColumnID>MateriaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="7d41a87f-360c-4999-af9c-fd879882b0eb">
+      <ID>Imparte</ID>
+      <Name>Imparte</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="bc74c1e3-475c-40d5-8338-d03fb6a65b24">
+          <ID>Recuento Imparte</ID>
+          <Name>Recuento Imparte</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="b3c4f80d-1a4b-40e7-b9ae-52964c8cdc3f">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="efff2e77-f1e8-48d6-9f1e-f10cd574cc6e">
+              <TableID>dbo_Imparte</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="eeac66e0-7e10-46ae-b7fe-3783e0fa9c42">
+          <CubeDimensionID>Dim Docente</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ab4eadbf-03cc-47e8-9165-e80683f01394">
+              <AttributeID>Docente Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="21e3a64e-d281-4f88-bf80-f4c081dd5c8b">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6280a08c-19df-40b4-a8a0-a67ff87e2fb0">
+                    <TableID>dbo_Imparte</TableID>
+                    <ColumnID>DocenteKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4044a131-00d7-4654-a2bf-c10ec54e4334">
+          <CubeDimensionID>Dim Horario</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="aa3634d3-5cb2-4346-9e6b-b7cf73b397aa">
+              <AttributeID>Horario Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="78af8e00-4496-4658-bb9d-21f9dea2401f">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="31f3e873-ca5f-4341-9fda-08e7115c3716">
+                    <TableID>dbo_Imparte</TableID>
+                    <ColumnID>HorarioKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c309eb86-7741-405f-9b2d-80611774358c">
+          <CubeDimensionID>Dim Materia</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="1ce36e09-9e0b-4b07-9d9d-588ba296f21a">
+              <AttributeID>Materia Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e382da0a-373d-4092-9938-e1f0947df34a">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4646dc19-f40c-4e38-a06c-ee70e08dac27">
+                    <TableID>dbo_Imparte</TableID>
+                    <ColumnID>MateriaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="46c91029-49d4-49df-aefc-b7f07be3af64">
+      <ID>Inscripcion</ID>
+      <Name>Inscripcion</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="d1b9fac0-f81d-441c-b53c-1096b30331b9">
+          <ID>Recuento Inscripcion</ID>
+          <Name>Recuento Inscripcion</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="b25aef68-22ac-44ad-a8ba-854bbc474525">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="d46f0b19-0fc5-4842-9f91-22429b2ab479">
+              <TableID>dbo_Inscripcion</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8a81d66b-8850-499d-84cc-86793cd0611d">
+          <CubeDimensionID>Dim Estudiante</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d4dcdf2e-15af-408f-9449-1ea7f74e03c8">
+              <AttributeID>Estudiante Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="fccb5d20-3247-44f4-a5f4-77674d7ef491">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="92f8c09f-10be-48e1-84d9-f1819aebff99">
+                    <TableID>dbo_Inscripcion</TableID>
+                    <ColumnID>EstudianteKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7fc41a28-ba56-465b-98e9-0e1a0bd4758f">
+          <CubeDimensionID>Dim Materia</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="228ea373-c76e-4107-be29-72879a8f605c">
+              <AttributeID>Materia Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="c3dc28c8-673c-4f0b-b6c1-4c372b69908e">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="654e0db0-6334-4f5b-b20f-e8fb11d93820">
+                    <TableID>dbo_Inscripcion</TableID>
+                    <ColumnID>MateriaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e6929f9c-2731-486f-a70d-e26136639831">
+          <CubeDimensionID>Dim Horario</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="09f9a21a-b6a3-4066-a693-47b425c3908a">
+              <AttributeID>Horario Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="905b5c5b-1ce1-4748-a5a8-4802fe826ca5">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0938578a-dc16-4d72-a021-fc4972a49931">
+                    <TableID>dbo_Inscripcion</TableID>
+                    <ColumnID>HorarioKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="9dbec0b0-20cf-4cf9-bf61-213dac1ef54a">
+      <ID>Nota</ID>
+      <Name>Nota</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="95803756-4306-4c8a-a75f-5f1f8129ef14">
+          <ID>Nota</ID>
+          <Name>Nota</Name>
+          <Source dwd:design-time-name="b09eb6bd-af0e-4080-a9e4-b2b2d375e0d6">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e8f840aa-4dc3-4da6-ba10-ad1df4c464c1">
+              <TableID>dbo_Nota</TableID>
+              <ColumnID>Nota</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3391f287-d4bf-4cb0-84b8-35a977e40a68">
+          <ID>Recuento Nota</ID>
+          <Name>Recuento Nota</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="c8987356-7ef4-47b5-9238-87e2a960f155">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="c793edd1-dc8e-4bae-840f-d5e4dc18aa27">
+              <TableID>dbo_Nota</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="aa5115c0-dbcb-4e3f-a880-93b25e535c64">
+          <CubeDimensionID>Dim Materia</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="2c571301-23af-4fb8-b64a-3f709a0de560">
+              <AttributeID>Materia Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f1dc775b-80e2-4b94-a106-0b8792430ab7">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e49e903e-61be-4965-8ba9-1424a98b04d2">
+                    <TableID>dbo_Nota</TableID>
+                    <ColumnID>MateriaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9b2ea629-6e34-4463-960e-c0ce55b1c647">
+          <CubeDimensionID>Dim Estudiante</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="aa992b38-9fcc-4c89-942e-4ad9e9cf3781">
+              <AttributeID>Estudiante Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="ced374ec-6e07-4b44-9356-93f66f7cfaf0">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d9e64fa8-a632-4697-9687-d4499cf94f8e">
+                    <TableID>dbo_Nota</TableID>
+                    <ColumnID>EstudianteKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="e2750c24-64cf-400a-976f-e98dec888cf9">
+    <DataSourceViewID>DW ACADEMICO</DataSourceViewID>
+  </Source>
+</Cube>
