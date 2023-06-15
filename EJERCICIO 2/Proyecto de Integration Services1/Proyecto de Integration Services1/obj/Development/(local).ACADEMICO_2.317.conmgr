@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="(local).ACADEMICO_2.317"
+  DTS:DTSID="{3A4C1038-EF93-41D7-BBF1-BF25217524A0}"
+  DTS:CreationName="ADO">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=(local);User ID=317;Initial Catalog=ACADEMICO_2;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdI902nnQHEC82qAdoudqnQAAAAACAAAAAAAQZgAAAAEAACAAAABAg6HbMECFTQE2RPcAeiWAcW6M/HiVsV+yHB4Xqa4rZwAAAAAOgAAAAAIAACAAAABA7XJU9CgfA9ulKYwsI5GiIsgzpTYe1byZ3Jpd7I0pbHAAAADO5xAvbRcDV9o2WXo3EASAuepVNk8x5U5OGqnlEPEt9erraCeTOBX6ph9NsEBjcEqPn5nPdM28Rrrzo13oLqJfgjlo++OEPZMINvrvruQuIcivzEIWC+pff+yVMMMmVxYgFlqCoWzn/5A4K8Em/sHgQAAAAJvomQVxIAU6pkrm9+SOtqsdWMpGbSWnr5JaaOZB4SGz6mbsV7FgGgJP2ZRQMZ/VRgIMbGW5sg9RdstAbM5rHFI=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

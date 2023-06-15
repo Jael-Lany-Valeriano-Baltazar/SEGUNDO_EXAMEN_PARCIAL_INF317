@@ -1,0 +1,128 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/15/2023 12:23:31 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-1RDV674"
+  DTS:CreatorName="DESKTOP-1RDV674\Zia OS"
+  DTS:DTSID="{9B670CC6-22AB-407C-8243-373D20DC6046}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{F20C8C6B-E865-4F83-86D0-2EB03FFE3922}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ACADEMICO_2.317 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{98CC0585-88D3-4C4A-9C52-B43820AC95F2}"
+      DTS:ObjectName="(local).ACADEMICO_2.317 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);User ID=317;Initial Catalog=ACADEMICO_2;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdI902nnQHEC82qAdoudqnQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAjqq60kUJt1ga2UFNu+vJJx4bTGXC9OYxQSLSlrlWdCQAAAAAOgAAAAAIAACAAAAAK7V4HQGOHbm33CG8/9Lv3wIVfvAGopOwUFMOT1PMCrhAAAADVqFfs/W3CiwP9crzhuI2zQAAAACXeORWKS3jsd4u4gDraqHgPywUT4IMQV7YYgGWCP1sW4EDDbPRtr8vypP//5EFkUM9Sb05MId4JQuqFUfMHosg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CREAR TABLAS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{547C9088-3FEE-4829-8273-9BC1DD88B6C7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CREAR TABLAS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{98CC0585-88D3-4C4A-9C52-B43820AC95F2}"
+          SQLTask:SqlStatementSource="-- Creación de la tabla Docente si no existe&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Docente')&#xA;BEGIN&#xA;    CREATE TABLE Docente (&#xA;        ID INT PRIMARY KEY,&#xA;        Nombre VARCHAR(50),&#xA;        Apellido VARCHAR(50),&#xA;        Especialidad VARCHAR(50)&#xA;    );&#xA;END;&#xA;&#xA;-- Creación de la tabla Materia si no existe&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Materia')&#xA;BEGIN&#xA;    CREATE TABLE Materia (&#xA;        ID INT PRIMARY KEY,&#xA;        Nombre VARCHAR(50),&#xA;        Descripcion VARCHAR(255),&#xA;        Creditos INT&#xA;    );&#xA;END;&#xA;&#xA;-- Creación de la tabla Horario si no existe&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Horario')&#xA;BEGIN&#xA;    CREATE TABLE Horario (&#xA;        ID INT PRIMARY KEY,&#xA;        DiaSemana VARCHAR(50),&#xA;        HoraInicio TIME,&#xA;        HoraFin TIME,&#xA;        Aula VARCHAR(50)&#xA;    );&#xA;END;&#xA;&#xA;-- Creación de la tabla Estudiante si no existe&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Estudiante')&#xA;BEGIN&#xA;    CREATE TABLE Estudiante (&#xA;        ID INT PRIMARY KEY,&#xA;        Nombre VARCHAR(50),&#xA;        Apellido VARCHAR(50),&#xA;        Carrera VARCHAR(50),&#xA;        Semestre INT&#xA;    );&#xA;END;&#xA;&#xA;-- Creación de la tabla Imparte si no existe&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Imparte')&#xA;BEGIN&#xA;    CREATE TABLE Imparte (&#xA;        ID_Docente INT,&#xA;        ID_Materia INT,&#xA;        PRIMARY KEY (ID_Docente, ID_Materia),&#xA;        FOREIGN KEY (ID_Docente) REFERENCES Docente(ID),&#xA;        FOREIGN KEY (ID_Materia) REFERENCES Materia(ID)&#xA;    );&#xA;END;&#xA;&#xA;-- Creación de la tabla Inscripcion si no existe&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Inscripcion')&#xA;BEGIN&#xA;    CREATE TABLE Inscripcion (&#xA;        ID_Estudiante INT,&#xA;        ID_Materia INT,&#xA;        PRIMARY KEY (ID_Estudiante, ID_Materia),&#xA;        FOREIGN KEY (ID_Estudiante) REFERENCES Estudiante(ID),&#xA;        FOREIGN KEY (ID_Materia) REFERENCES Materia(ID)&#xA;    );&#xA;END;&#xA;&#xA;-- Creación de la tabla Notas si no existe&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Notas')&#xA;BEGIN&#xA;    CREATE TABLE Notas (&#xA;        ID_Estudiante INT,&#xA;        ID_Materia INT,&#xA;        Nota DECIMAL(4,2),&#xA;        PRIMARY KEY (ID_Estudiante, ID_Materia),&#xA;        FOREIGN KEY (ID_Estudiante) REFERENCES Estudiante(ID),&#xA;        FOREIGN KEY (ID_Materia) REFERENCES Materia(ID)&#xA;    );&#xA;END;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\INSERTAR DATOS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{B1C1B4D0-D1ED-4DC9-A72D-72C7AEC9B4D0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INSERTAR DATOS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{98CC0585-88D3-4C4A-9C52-B43820AC95F2}"
+          SQLTask:SqlStatementSource="&#xA;--------------------&#xA;-- Inserción de datos en la tabla Docente&#xA;INSERT INTO Docente (ID, Nombre, Apellido, Especialidad)&#xA;VALUES&#xA;    (1, 'Juan', 'Pérez', 'Matemáticas'),&#xA;    (2, 'María', 'González', 'Historia'),&#xA;    (3, 'Carlos', 'López', 'Física'),&#xA;    (4, 'Laura', 'Martínez', 'Química'),&#xA;    (5, 'Pedro', 'Ramírez', 'Inglés'),&#xA;    (6, 'Ana', 'Sánchez', 'Economía'),&#xA;    (7, 'Luis', 'Torres', 'Programación'),&#xA;    (8, 'Sofía', 'Hernández', 'Literatura'),&#xA;    (9, 'Daniel', 'Jiménez', 'Biología'),&#xA;    (10, 'Lucía', 'Rodríguez', 'Arte');&#xA;&#xA;-- Inserción de datos en la tabla Materia&#xA;INSERT INTO Materia (ID, Nombre, Descripcion, Creditos)&#xA;VALUES&#xA;    (1, 'Álgebra', 'Introducción al álgebra lineal', 4),&#xA;    (2, 'Historia del Arte', 'Estudio de las corrientes artísticas', 3),&#xA;    (3, 'Física I', 'Mecánica clásica', 5),&#xA;    (4, 'Química Orgánica', 'Compuestos orgánicos', 4),&#xA;    (5, 'Inglés Avanzado', 'Nivel avanzado de inglés', 3),&#xA;    (6, 'Economía Internacional', 'Comercio internacional', 4),&#xA;    (7, 'Programación Java', 'Desarrollo de aplicaciones Java', 5),&#xA;    (8, 'Literatura Universal', 'Obras literarias destacadas', 3),&#xA;    (9, 'Biología Celular', 'Estudio de la célula', 4),&#xA;    (10, 'Dibujo Artístico', 'Técnicas de dibujo', 3);&#xA;&#xA;-- Inserción de datos en la tabla Horario&#xA;INSERT INTO Horario (ID, DiaSemana, HoraInicio, HoraFin, Aula)&#xA;VALUES&#xA;    (1, 'Lunes', '09:00:00', '11:00:00', 'Aula 101'),&#xA;    (2, 'Martes', '14:00:00', '16:00:00', 'Aula 202'),&#xA;    (3, 'Miércoles', '10:00:00', '12:00:00', 'Aula 105'),&#xA;    (4, 'Jueves', '08:00:00', '10:00:00', 'Aula 203'),&#xA;    (5, 'Viernes', '16:00:00', '18:00:00', 'Aula 304'),&#xA;    (6, 'Lunes', '14:00:00', '16:00:00', 'Aula 106'),&#xA;    (7, 'Miércoles', '08:00:00', '10:00:00', 'Aula 201'),&#xA;    (8, 'Jueves', '12:00:00', '14:00:00', 'Aula 302'),&#xA;    (9, 'Viernes', '10:00:00', '12:00:00', 'Aula 310'),&#xA;&#x9;(10, 'Viernes', '08:00:00', '11:00:00', 'Aula 330');&#xA;&#xA;&#x9;-- Inserción de datos en la tabla Estudiante&#xA;INSERT INTO Estudiante (ID, Nombre, Apellido, Carrera, Semestre)&#xA;VALUES&#xA;    (1, 'María', 'López', 'Ingeniería Civil', 5),&#xA;    (2, 'Carlos', 'García', 'Medicina', 3),&#xA;    (3, 'Ana', 'Martínez', 'Administración de Empresas', 6),&#xA;    (4, 'Luis', 'Hernández', 'Arquitectura', 4),&#xA;    (5, 'Laura', 'Pérez', 'Derecho', 8),&#xA;    (6, 'Pedro', 'González', 'Psicología', 2),&#xA;    (7, 'Sofía', 'Rodríguez', 'Ciencias de la Computación', 5),&#xA;    (8, 'Diego', 'Torres', 'Contabilidad', 3),&#xA;    (9, 'Valentina', 'Sánchez', 'Biomedicina', 6),&#xA;    (10, 'Javier', 'Ramírez', 'Comunicación', 4);&#xA;&#xA;&#xA;-- Inserción de datos en la tabla Imparte&#xA;INSERT INTO Imparte (ID_Docente, ID_Materia)&#xA;VALUES&#xA;    (1, 1),&#xA;    (2, 2),&#xA;    (3, 3),&#xA;    (4, 4),&#xA;    (5, 5),&#xA;    (6, 6),&#xA;    (7, 7),&#xA;    (8, 8),&#xA;    (9, 9),&#xA;    (10, 10);&#xA;&#xA;-- Inserción de datos en la tabla Inscripcion&#xA;INSERT INTO Inscripcion (ID_Estudiante, ID_Materia)&#xA;VALUES&#xA;    (1, 1),&#xA;    (2, 2),&#xA;    (3, 3),&#xA;    (4, 4),&#xA;    (5, 5),&#xA;    (6, 6),&#xA;    (7, 7),&#xA;    (8, 8),&#xA;    (9, 9),&#xA;    (10, 10);&#xA;&#xA;-- Inserción de datos en la tabla Notas&#xA;INSERT INTO Notas (ID_Estudiante, ID_Materia, Nota)&#xA;VALUES&#xA;    (1, 1, 8.5),&#xA;    (2, 2, 7.9),&#xA;    (3, 3, 9.2),&#xA;    (4, 4, 6.7),&#xA;    (5, 5, 8.0),&#xA;    (6, 6, 9.5),&#xA;    (7, 7, 7.8),&#xA;    (8, 8, 8.9),&#xA;    (9, 9, 9.7),&#xA;    (10, 10, 8.3);&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{15002974-8E3F-4EE7-A429-C975AB490C06}"
+      DTS:From="Package\CREAR TABLAS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\INSERTAR DATOS" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="sql12">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CREAR TABLAS"
+          TopLeft="80,30" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\INSERTAR DATOS"
+          TopLeft="72,130" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="155,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,10 @@
+1;Juan;Pérez;Matemáticas
+2;María;González;Historia
+3;Pedro;Gómez;Química
+4;Ana;Rodríguez;Literatura
+5;Carlos;López;Física
+6;Laura;Martínez;Psicología
+7;Miguel;Sánchez;Biología
+8;Sofía;Hernández;Informática
+9;Luis;Torres;Ingeniería Civil
+10;Ana;Lara;Arquitectura
