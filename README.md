@@ -1,4 +1,8 @@
 # SEGUNDO_EXAMEN_PARCIAL_INF317
+UNIVERSIDAD MAYOR DE SAN ANDRÉS
+FACULTAD DE CIENCIAS PURAS Y NATURALES
+CARRERA DE INFORMÁTICA
+
 
 1. Desarrolle un modelo de base de datos financiero, académico u otro; que contenga al menos 7 tablas y al menos unos 10 registros completos (query).
 2. Realice un modelo de ETL para la creación del modelo de manera automática, incluyendo el llenado.
